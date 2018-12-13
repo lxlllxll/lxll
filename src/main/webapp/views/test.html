@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <form>
+        商品ID:<input type="text" v-model="good.id"/><br/>
+        商品名称:<input type="text" v-model="good.name"/><br/>
+        价格:<input type="text" v-model="good.price"/><br/>
+        数量:<input type="text" v-model="good.number"/><br/>
+    </form>
+    <button @click="addBtn">添加商品</button>
+    <table border="1">
+        <tr>
+            <td>商品ID</td>
+            <td>商品名称</td>
+            <td>价格</td>
+            <td>数量</td>
+            <td>合计</td>
+            <td>操作</td>
+        </tr>
+        <tr v-for="good,index in goods" :key="good.id">
+            <td>{{good.id}}{{key}}</td>
+            <td>{{good.name}}</td>
+            <td>{{good.price}}</td>
+            <td>{{good.number}}</td>
+            <td>{{good.number*good.price}}</td>
+            <td>
+                <button @click.stop='delBtn(index)'>删除</button>
+            </td>
+        </tr>
+    </table>
+    <!--
+    summ()---------methods中
+    summ-----------computed中
+    -->
+    <div>总计:{{summ}}</div>
+    过滤前：<input type="text" v-model="message"/>
+    <div>过滤后:{{message|haha}}</div>
+</div>
+
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            good:{
+                id:0,
+                name:'',
+                price:0,
+                number:0
+            },
+            goods:[],
+            message:''
+        },
+        beforeCreate: function(){
+            console.log("创建之前--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        created: function(){
+            console.log("创建之后--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        beforeMount: function(){
+            console.log("加载之前--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        mounted: function(){
+            console.log("加载之后--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        beforeUpdate: function(){
+            console.log("修改之前--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        updated: function(){
+            console.log("修改之后--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        beforeDestroy: function(){
+            console.log("销毁之前--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        destroyed: function(){
+            console.log("销毁之后--------");
+            console.log("el:"+this.$el);
+            console.log("data:"+this.data);
+            console.log("good:"+this.good.id);
+            console.log("goods:"+this.goods[0].id);
+        },
+        methods:{
+            addBtn:function (){
+                this.goods.push(this.good);
+                //good和goods之间解绑定
+                this.good={
+                    id:0,
+                    name:'',
+                    price:0,
+                    number:0
+                }
+            },
+            delBtn:function (index){
+                this.goods.splice(index, 1)
+            }
+        },
+        filters:{
+            haha:function (message) {
+                return message.toString().toLocaleUpperCase();
+            }
+        },
+        computed:{
+            summ:function() {
+                var a = 0;
+                for(var i = 0;i<this.goods.length;i++){
+                    a += this.goods[i].number*this.goods[i].price;
+                };
+                return a;
+            }
+        }
+    })
+</script>
+</body>
+</html>

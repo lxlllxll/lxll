@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color: green;
+        }
+        .yellow{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ap">
+        <my></my>
+        <muse name="轻轻" money="100"></muse>
+    </div>
+
+    <div id="app">
+        <div>
+            <h3 :class="cc">hahahhahahahhahahahahha</h3>
+        </div>
+        <!--color   cc-->
+        <select v-model="cc">
+            <option value="red">红色</option>
+            <option value="green">绿色</option>
+            <option value="yellow">黄色</option>
+        </select><br>
+
+        <select v-model="select">
+            <option value="1">郑俊英</option>
+            <option value="2">赵寅成</option>
+        </select>
+        <div>{{ select }}</div>
+        <mycomponent></mycomponent>
+        <hr>
+        <my></my>
+
+
+
+        <table border="1">
+            <tr>
+                <td>商品名称</td>
+                <td>商品数量</td>
+                <td>商品价钱</td>
+                <td>合计</td>
+            </tr>
+            <tr>
+                <td>{{ good.name }}</td>
+                <td>
+                    <button :disabled="good.count==limit" @click.stop="good.count--">-</button>
+                    <input type="text" v-model="good.count"/>
+                    <button :disabled="good.count==up" @click.stop="good.count++">+</button>
+                </td>
+                <td>{{ good.price }}</td>
+                <td>{{ good.count*good.price }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        //写完不能加，号     组件名只能是全小写，或首字母大写   {其中元素用，隔开}
+        Vue.component('mycomponent',{
+            template:'<div><button>哈哈哈</button><button>哈哈哈</button><button>哈哈哈</button></div>'
+        })
+        Vue.component('my',{
+            template:'<div><button @click="count++">第{{ count }}此点我</button></div>',
+            data: function () {
+                return {count:0}
+            }
+        })
+        var m = {
+            template:'<div><button @click="count++">{{ name }}第{{ count }}此点我,{{ money }}</button></div>',
+            data: function () {
+                return {count:0}
+            },
+            props:['name','money']
+        }
+        var v = new Vue({
+            el:"#ap",
+            components:{
+                muse:m
+            }
+        })
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                good:{
+                    name:'fafa',
+                    count:5,
+                    price:12
+                },
+                limit:1,
+                up:10,
+                goods:[],
+                color:'green',
+                cc:'',
+                select:''
+            },
+            methods: {
+                addBtn: function () {
+                    this.goods.push(this.good);
+                    this.good = {
+                        name: '',
+                        price: 0,
+                        count: 0
+                    }
+                },
+            },
+            computed:{
+                sum:function(){
+                    var a = 0;
+                    for(var i = 0;i<this.goods.length;i++){
+                        a += this.goods[i].count*this.goods[i].price;
+                    };
+                    return a;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

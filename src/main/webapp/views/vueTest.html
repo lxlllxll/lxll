@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form>
+            id:<input type="text" v-model="admin.id"/><br/>
+            name:<input type="text" v-model="admin.name"/><br/>
+            status:<input type="text" v-model="admin.status"/><br/>
+        </form>
+        <button @click="addBtn">添加用户</button>
+        <table border="1">
+            <tr>
+                <td>编号</td>
+                <td>姓名</td>
+                <td>状态</td>
+                <td>操作</td>
+            </tr>
+            <tr v-for="admin,index in admins">
+                <td>{{admin.id}}</td>
+                <td>{{admin.name}}</td>
+                <td>{{admin.status}}</td>
+                <td>
+                    <button @click.stop='delBtn(index)'>删除</button>
+                    <button @click.stop='updBtn(index)'>修改</button>
+                </td>
+            </tr>
+        </table>
+        <fieldset v-show="editSeen">
+            <legend>编辑用户</legend>
+            <div class="">
+                <p>
+                    <label>编号：</label>
+                    <input type="text" v-model="editPeople.id" readonly="readonly" value="{{id}}">
+                </p>
+                <p>
+                    <label>姓名：</label>
+                    <input type="text" v-model="editPeople.name" value="{{name}}">
+                </p>
+                <p>
+                    <label>状态：</label>
+                    <select v-model="editPeople.status" value="{{status}}">
+                        <option>正常</option>
+                        <option>异常</option>
+                    </select>
+                    <!--<input type="text" v-model="editPeople.status" value="{{status}}">-->
+                </p>
+                <p>
+                    <button class="btn btn-success btn-sm submit" @click.stop="editSubmit">提交</button>
+                </p>
+            </div>
+        </fieldset>
+    </div>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                admin:{
+                    id:0,
+                    name:'',
+                    status:'正常'
+                },
+                admins:[],
+                seen:false,
+                editSeen:false,
+                checked:false,
+                selected:[],
+                editPeople:{ id:0,name:'',status:'正常' }
+            },
+            methods:{
+                addBtn:function (){
+                    this.admins.push(this.admin);
+                    this.admin={id:0,name:'',status:'正常'}
+                },
+                delBtn:function (index){
+                    this.admins.splice(index, 1)
+                },
+                updBtn:function(index){
+                    this.editSeen = true;
+                    //有实时修改的缺点
+                    //this.editPeople = this.admins[index];
+                    //第一
+                    this.editPeople = JSON.parse( JSON.stringify(this.admins[index]) );
+                    //第二
+                    //this.admin = JSON.parse( JSON.stringify(this.admins[index]) );
+                    this.selected = index;
+                },
+                editSubmit:function(){
+                    //第一
+                    Vue.set(this.admins, this.selected, this.editPeople);
+                    this.editSeen = false;
+                    //第二
+                    /*Vue.set(this.admins, this.selected, this.admin);
+                    this.admin={id:0,name:'',status:'正常'}*/
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

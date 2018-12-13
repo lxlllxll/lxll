@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaa.dao.TraderecordMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.aaa.entity.Traderecord">
+		<result column="recordno" property="recordno" />
+		<result column="recordtime" property="recordtime" />
+		<result column="recordmoney" property="recordmoney" />
+		<result column="recordremark" property="recordremark" />
+		<result column="tradeId" property="tradeId" />
+	</resultMap>
+	<select id="dataGridT" parameterType="map" resultType="map">
+		select * from traderecord,tradetype where traderecord.tradeId=tradetype.tradeId and 1=1
+		<if test="tradeId!=null and tradeId!=''">
+			and tradeId like concat(concat('%',#{tradeId}),'%')
+		</if>
+	</select>
+	<select id="selectSize" parameterType="map" resultType="map">
+		select * from traderecord,tradetype where traderecord.tradeId=tradetype.tradeId and 1=1
+		<if test="tradeId!=null and tradeId!=''">
+			and tradeId like concat(concat('%',#{tradeId}),'%')
+		</if>
+	</select>
+	<!--<select id="listTrade" resultMap="my">
+		select traderecord.recordtime,traderecord.recordno,traderecord.recordmoney,traderecord.recordremark,tradetype.tradeName from traderecord,tradetype where traderecord.tradeId=tradetype.tradeId
+	</select>
+	<resultMap id="my" type="com.aaa.entity.Traderecord">
+		<result column="recordno" property="recordno" />
+		<result column="recordtime" property="recordtime" />
+		<result column="recordmoney" property="recordmoney" />
+		<result column="recordremark" property="recordremark" />
+		<association property="tradeId" javaType="com.aaa.entity.Tradetype" column="tradeId">
+			<result column="tradeId" property="tradeId"/>
+			<result column="tradeName" property="tradeName"/>
+		</association>
+	</resultMap>-->
+	<select id="selectMapsPage" resultType="Map" >
+		select * from traderecord t,tradetype tt where t.tradeId=tt.tradeId
+	</select>
+</mapper>

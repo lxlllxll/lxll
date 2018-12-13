@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title课堂</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--
+    梁王导入vue.js：https://cdn.jsdelivr.net/npm/vue/dist/vue.js
+    学习文档：https://cn.vuejs.org/v2/guide/index.html#Vue-js-%E6%98%AF%E4%BB%80%E4%B9%88
+    -->
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="message"/>
+        {{message}}
+    </div>
+
+    <div id="app-2">
+    <span :title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <!--<li v-for="todo in todos">
+                {{ todo.text }}
+            </li>-->
+            <table>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </ol>
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                message:"Hello Vue"
+            }
+        })
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: '页面加载于 ' + new Date().toLocaleString()
+            }
+        })
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [
+                    { id: 'a1',adminName: 'ddd',adminstatus: '正常' },
+                    { id: 'a13',adminName: 'ddh',adminstatus: '正常' },
+                    { id: 'a14',adminName: 'hhh',adminstatus: '正常' }
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

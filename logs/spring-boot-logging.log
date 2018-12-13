@@ -1,0 +1,49 @@
+2018/12/03-16:10 [restartedMain] INFO  com.aaa.YfbankApplication- Starting YfbankApplication on WIN-2AS3BBMISKU with PID 5348 (E:\ideaworks\yfbank\target\classes started by Administrator in E:\ideaworks\yfbank)
+2018/12/03-16:10 [restartedMain] INFO  com.aaa.YfbankApplication- No active profile set, falling back to default profiles: default
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 9092 (http)
+2018/12/03-16:10 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/03-16:10 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.12
+2018/12/03-16:10 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\source\JDK1.8\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\source\oracle\content\product\11.1.0\db_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\source\JDK1.7\bin;C:\enjoy;E:\source\SVN\TortoiseSVN\bin;E:\source\SVN\VisualSVN Server\bin;E:\Program Files (x86)\tencent\QQ\Bin;E:\source\maven\apache-maven-3.3.9;E:\source\maven\apache-maven-3.3.9\bin\;E:\source\git\Git\cmd;D:\一期之后\分享\haha\分享\Jmeter\安装包\apachejmeter31\apache-jmeter-3.1\bin\;E:\source\JDK1.8\jdk1.8.0_191\bin;E:\source\JDK1.8\jdk1.8.0_191\jre\bin;E:\source\python\Scripts\;E:\source\python\;.]
+2018/12/03-16:10 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018/12/03-16:10 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/aaa]- Initializing Spring embedded WebApplicationContext
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 2334 ms
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Servlet dispatcherServlet mapped to [/]
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'formContentFilter' to: [/*]
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2018/12/03-16:10 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2018/12/03-16:10 [restartedMain] WARN  com.baomidou.mybatisplus.toolkit.TableInfoHelper- Warn: Could not find @TableId in Class: com.aaa.entity.Traderecord.
+2018/12/03-16:10 [restartedMain] WARN  com.baomidou.mybatisplus.mapper.AutoSqlInjector- class com.aaa.entity.Traderecord ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/03-16:10 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 9092 (http) with context path '/aaa'
+2018/12/03-16:10 [restartedMain] INFO  com.aaa.YfbankApplication- Started YfbankApplication in 5.207 seconds (JVM running for 6.58)
+2018/12/03-16:11 [http-nio-9092-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/aaa]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/03-16:11 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2018/12/03-16:11 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 15 ms
+2018/12/03-18:58 [restartedMain] INFO  com.aaa.YfbankApplication- Starting YfbankApplication on WIN-2AS3BBMISKU with PID 7012 (E:\ideaworks\yfbank\target\classes started by Administrator in E:\ideaworks\yfbank)
+2018/12/03-18:58 [restartedMain] INFO  com.aaa.YfbankApplication- No active profile set, falling back to default profiles: default
+2018/12/03-18:58 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/03-18:58 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/03-18:58 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 9092 (http)
+2018/12/03-18:58 [restartedMain] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2018/12/03-18:58 [restartedMain] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet Engine: Apache Tomcat/9.0.12
+2018/12/03-18:58 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener- The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\source\JDK1.8\jdk1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;E:\source\oracle\content\product\11.1.0\db_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;E:\source\JDK1.7\bin;C:\enjoy;E:\source\SVN\TortoiseSVN\bin;E:\source\SVN\VisualSVN Server\bin;E:\Program Files (x86)\tencent\QQ\Bin;E:\source\maven\apache-maven-3.3.9;E:\source\maven\apache-maven-3.3.9\bin\;E:\source\git\Git\cmd;D:\一期之后\分享\haha\分享\Jmeter\安装包\apachejmeter31\apache-jmeter-3.1\bin\;E:\source\JDK1.8\jdk1.8.0_191\bin;E:\source\JDK1.8\jdk1.8.0_191\jre\bin;E:\source\python\Scripts\;E:\source\python\;.]
+2018/12/03-18:59 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018/12/03-18:59 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/aaa]- Initializing Spring embedded WebApplicationContext
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 3649 ms
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean- Servlet dispatcherServlet mapped to [/]
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'formContentFilter' to: [/*]
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2018/12/03-18:59 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2018/12/03-18:59 [restartedMain] WARN  com.baomidou.mybatisplus.toolkit.TableInfoHelper- Warn: Could not find @TableId in Class: com.aaa.entity.Traderecord.
+2018/12/03-18:59 [restartedMain] WARN  com.baomidou.mybatisplus.mapper.AutoSqlInjector- class com.aaa.entity.Traderecord ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer- LiveReload server is running on port 35729
+2018/12/03-18:59 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 9092 (http) with context path '/aaa'
+2018/12/03-18:59 [restartedMain] INFO  com.aaa.YfbankApplication- Started YfbankApplication in 7.88 seconds (JVM running for 9.764)
